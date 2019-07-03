@@ -769,7 +769,7 @@ id radio
 id right
 id right_icon
 id right_side
-id rvTweet
+id rvItems
 id screen
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -801,6 +801,7 @@ id start
 id status_bar_latest_event_content
 id submenuarrow
 id submit_area
+id swipeContainer
 id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager
@@ -816,6 +817,8 @@ id title_template
 id top
 id topPanel
 id tvBody
+id tvCount
+id tvTimeStamp
 id tvUserName
 id uniform
 id up
@@ -881,6 +884,7 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu login
 menu menu_timeline
+string _280
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -921,6 +925,8 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
+string count
+string date
 string intent_host
 string intent_scheme
 string login_label

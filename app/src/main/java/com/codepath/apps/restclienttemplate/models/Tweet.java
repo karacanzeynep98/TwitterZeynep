@@ -1,10 +1,15 @@
 package com.codepath.apps.restclienttemplate.models;
 
+import android.net.ParseException;
 import android.os.Parcelable;
+import android.text.format.DateUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.parceler.Parcel;
+
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 @Parcel
 public class Tweet {
@@ -48,5 +53,6 @@ public class Tweet {
     public String getCreatedAt() {
         return createdAt;
     }
+
 
 }

@@ -514,18 +514,18 @@ public final class R {
         public static final int src_over = 0x7f070084;
         public static final int status_bar_latest_event_content = 0x7f070087;
         public static final int submit_area = 0x7f070089;
-        public static final int tabMode = 0x7f07008a;
-        public static final int text = 0x7f07008e;
-        public static final int text2 = 0x7f07008f;
-        public static final int textSpacerNoButtons = 0x7f070090;
-        public static final int time = 0x7f070092;
-        public static final int title = 0x7f070093;
-        public static final int title_template = 0x7f070095;
-        public static final int topPanel = 0x7f070097;
-        public static final int up = 0x7f07009b;
-        public static final int useLogo = 0x7f07009c;
-        public static final int withText = 0x7f07009d;
-        public static final int wrap_content = 0x7f07009f;
+        public static final int tabMode = 0x7f07008b;
+        public static final int text = 0x7f07008f;
+        public static final int text2 = 0x7f070090;
+        public static final int textSpacerNoButtons = 0x7f070091;
+        public static final int time = 0x7f070093;
+        public static final int title = 0x7f070094;
+        public static final int title_template = 0x7f070096;
+        public static final int topPanel = 0x7f070098;
+        public static final int up = 0x7f07009e;
+        public static final int useLogo = 0x7f07009f;
+        public static final int withText = 0x7f0700a0;
+        public static final int wrap_content = 0x7f0700a2;
     }
     public static final class integer {
         private integer() {}
@@ -576,22 +576,22 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int abc_action_bar_home_description = 0x7f0b0000;
-        public static final int abc_action_bar_up_description = 0x7f0b0001;
-        public static final int abc_action_menu_overflow_description = 0x7f0b0002;
-        public static final int abc_action_mode_done = 0x7f0b0003;
-        public static final int abc_activity_chooser_view_see_all = 0x7f0b0004;
-        public static final int abc_activitychooserview_choose_application = 0x7f0b0005;
-        public static final int abc_search_hint = 0x7f0b001e;
-        public static final int abc_searchview_description_clear = 0x7f0b001f;
-        public static final int abc_searchview_description_query = 0x7f0b0020;
-        public static final int abc_searchview_description_search = 0x7f0b0021;
-        public static final int abc_searchview_description_submit = 0x7f0b0022;
-        public static final int abc_searchview_description_voice = 0x7f0b0023;
-        public static final int abc_shareactionprovider_share_with = 0x7f0b0024;
-        public static final int abc_shareactionprovider_share_with_application = 0x7f0b0025;
-        public static final int abc_toolbar_collapse_description = 0x7f0b0026;
-        public static final int status_bar_notification_info_overflow = 0x7f0b002c;
+        public static final int abc_action_bar_home_description = 0x7f0b0001;
+        public static final int abc_action_bar_up_description = 0x7f0b0002;
+        public static final int abc_action_menu_overflow_description = 0x7f0b0003;
+        public static final int abc_action_mode_done = 0x7f0b0004;
+        public static final int abc_activity_chooser_view_see_all = 0x7f0b0005;
+        public static final int abc_activitychooserview_choose_application = 0x7f0b0006;
+        public static final int abc_search_hint = 0x7f0b001f;
+        public static final int abc_searchview_description_clear = 0x7f0b0020;
+        public static final int abc_searchview_description_query = 0x7f0b0021;
+        public static final int abc_searchview_description_search = 0x7f0b0022;
+        public static final int abc_searchview_description_submit = 0x7f0b0023;
+        public static final int abc_searchview_description_voice = 0x7f0b0024;
+        public static final int abc_shareactionprovider_share_with = 0x7f0b0025;
+        public static final int abc_shareactionprovider_share_with_application = 0x7f0b0026;
+        public static final int abc_toolbar_collapse_description = 0x7f0b0027;
+        public static final int status_bar_notification_info_overflow = 0x7f0b002f;
     }
     public static final class style {
         private style() {}

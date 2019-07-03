@@ -3,10 +3,13 @@ package com.codepath.apps.restclienttemplate;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -14,6 +17,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.parceler.Parcels;
+import org.w3c.dom.Text;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -23,6 +27,7 @@ public class ComposeActivity extends AppCompatActivity {
 
     TwitterClient client;
     EditText etTweetInput;
+    TextView tvCount;
     Button myButton;
 
     @Override
@@ -33,6 +38,7 @@ public class ComposeActivity extends AppCompatActivity {
 
         etTweetInput = (EditText) findViewById(R.id.etNewTweet);
         myButton = (Button) findViewById(R.id.myTweetButton);
+        tvCount = (TextView) findViewById(R.id.tvCount);
 
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +48,8 @@ public class ComposeActivity extends AppCompatActivity {
         });
 
         client = TwitterApp.getRestClient();
+
+        etTweetInput.addTextChangedListener(mTextEditorWatcher);
     }
 
     private void sendTweet() {
@@ -74,6 +82,26 @@ public class ComposeActivity extends AppCompatActivity {
             }
         });
     }
+
+    private final TextWatcher mTextEditorWatcher=new TextWatcher() {
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count,
+                                      int after) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+            tvCount.setText(String.valueOf(280-s.length()));
+        }
+    };
 
 
 
