@@ -45,7 +45,7 @@ public class ComposeActivity extends AppCompatActivity {
     }
 
     private void sendTweet() {
-        //MIGHT NEED TO MOVE THE CLIENT HERE
+
         client.sendTweet(etTweetInput.getText().toString(), new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -65,13 +65,12 @@ public class ComposeActivity extends AppCompatActivity {
                     } catch (JSONException e){
                         Log.e("ComposeActivity", "Error parsing response", e);
                     }
-
                 }
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-;
+                ;
             }
         });
     }

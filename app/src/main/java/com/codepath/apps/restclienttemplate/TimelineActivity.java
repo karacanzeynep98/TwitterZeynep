@@ -131,14 +131,12 @@ public class TimelineActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode == COMPOSE_REQUEST_CODE && resultCode == RESULT_OK) {
 
-            resultTweet = (Tweet) Parcels.unwrap(getIntent().getParcelableExtra(ComposeActivity.RESULT_TWEET_KEY));
-
-            //Tweet resultTweet = data.getParcelableExtra(ComposeActivity.RESULT_TWEET_KEY);
+            resultTweet = (Tweet) Parcels.unwrap(data.getParcelableExtra(ComposeActivity.RESULT_TWEET_KEY));
 
             tweets.add(0, resultTweet);
             tweetAdapter.notifyItemInserted(0);
             rvTweets.scrollToPosition(0);
-            Toast.makeText(this, "Tweet post succeeded", Toast.LENGTH_LONG);
+
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
