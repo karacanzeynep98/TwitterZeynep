@@ -1,6 +1,8 @@
 package com.codepath.apps.restclienttemplate;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.ParseException;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -75,6 +77,13 @@ public class TimelineActivity extends AppCompatActivity {
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
+
+        getSupportActionBar().setTitle("Twitter");
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ff1da1f2")));
+        getSupportActionBar().setLogo(getDrawable(R.drawable.ic_launcher_twitter_round));
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+
     }
 
     private void populateTimeline(){
@@ -83,7 +92,6 @@ public class TimelineActivity extends AppCompatActivity {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
-
                 for (int i = 0; i < response.length(); i++){
                     //convert each object to a tweet model
                     //add that tweet model to our data source
@@ -91,7 +99,7 @@ public class TimelineActivity extends AppCompatActivity {
                     try {
                         Tweet tweet = Tweet.fromJSON(response.getJSONObject(i));
                         tweets.add(tweet);
-                        tweetAdapter.notifyItemInserted(tweets.size() - 1);
+                        tweetAdapter.notifyItemInserted(tweets.size() - 1); //pass the position as argument
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -131,7 +139,7 @@ public class TimelineActivity extends AppCompatActivity {
     }
 
 
-    //filter by filter.getFilterId(0
+    //filter by filter.getFilterId for clicking on MENU items
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle presses on the action bar items

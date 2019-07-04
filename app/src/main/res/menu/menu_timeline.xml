@@ -6,7 +6,7 @@
         android:id="@+id/composeButton"
         android:icon="@drawable/ic_addtweet"
         app:showAsAction="ifRoom"
-        android:title="Compose">
+        android:title="@string/compose">
     </item>
 
 </menu>
