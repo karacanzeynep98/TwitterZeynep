@@ -12,8 +12,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
+import com.codepath.apps.restclienttemplate.models.User;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.JsonHttpResponseHandler;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.parceler.Parcels;
@@ -27,18 +30,20 @@ public class ComposeActivity extends AppCompatActivity {
 
     TwitterClient client;
     EditText etTweetInput;
+    TextView tvScreenName;
     TextView tvCount;
     Button myButton;
+    String my_username = "@Karacan_149";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compose);
 
-
         etTweetInput = (EditText) findViewById(R.id.etNewTweet);
         myButton = (Button) findViewById(R.id.myTweetButton);
         tvCount = (TextView) findViewById(R.id.tvCount);
+        tvScreenName = (TextView) findViewById(R.id.tvScreenNameCompose);
 
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,8 +53,10 @@ public class ComposeActivity extends AppCompatActivity {
         });
 
         client = TwitterApp.getRestClient();
+        tvScreenName.setText(my_username);
 
         etTweetInput.addTextChangedListener(mTextEditorWatcher);
+
     }
 
     private void sendTweet() {
@@ -102,7 +109,6 @@ public class ComposeActivity extends AppCompatActivity {
             tvCount.setText(String.valueOf(280-s.length()));
         }
     };
-
 
 
 

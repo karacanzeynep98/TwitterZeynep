@@ -14,5 +14,8 @@
     <string name="count">Count</string>
     <string name="_280">280</string>
     <string name="compose">Compose</string>
+    <string name="userid">userid</string>
+    <string name="username">username</string>
+    <string name="loading">Loading...</string>
 
 </resources>

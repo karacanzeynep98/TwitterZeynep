@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:2:1-41:12
-INJECTED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:2:1-41:12
-INJECTED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:2:1-41:12
-INJECTED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:2:1-41:12
+ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:2:1-45:12
 MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/zkaracan98/.gradle/caches/transforms-2/files-2.1/69a8747c157aa8d5c9eff656f6ff56d8/AndroidManifest.xml:17:1-22:12
 MERGED from [com.codepath.libraries:android-oauth-handler:1.4.0] /Users/zkaracan98/.gradle/caches/transforms-2/files-2.1/c5990901d72afb59fadb1c6204dc2d69/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/zkaracan98/.gradle/caches/transforms-2/files-2.1/d9d39a077e935cf697cd6e56b3d04951/AndroidManifest.xml:17:1-22:12
@@ -39,9 +39,9 @@ MERGED from [com.android.support:documentfile:28.0.0] /Users/zkaracan98/.gradle/
 MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/zkaracan98/.gradle/caches/transforms-2/files-2.1/4ed7948451e85c26af2fd701088e78a0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:print:28.0.0] /Users/zkaracan98/.gradle/caches/transforms-2/files-2.1/2613447658fb9f3953be568805ad5f8a/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/zkaracan98/.gradle/caches/transforms-2/files-2.1/29454ca07d8d2aefdb4259e5715e7da4/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:2:1-41:12
-INJECTED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:2:1-41:12
-INJECTED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:2:1-45:12
 	package
 		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:3:5-51
 		INJECTED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml
@@ -65,7 +65,7 @@ ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/An
 	android:name
 		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:8:22-78
 application
-ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:10:5-39:19
+ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:10:5-43:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/zkaracan98/.gradle/caches/transforms-2/files-2.1/441f91ecc8dc37de4ae9838e69ede7ed/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/zkaracan98/.gradle/caches/transforms-2/files-2.1/441f91ecc8dc37de4ae9838e69ede7ed/AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.stetho:stetho:1.5.0] /Users/zkaracan98/.gradle/caches/transforms-2/files-2.1/78aff9d8498ea5f941a9c45aba0ed43b/AndroidManifest.xml:11:5-20
@@ -88,52 +88,62 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/zkaracan98/.
 		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:16:9-44
 	android:name
 		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:11:9-35
+activity#com.codepath.apps.restclienttemplate.TweetDetails
+ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:17:9-59
+	android:name
+		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:17:19-47
+activity#com.codepath.apps.restclienttemplate.ReplyActivity
+ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:18:9-51
+	android:name
+		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:18:19-48
 activity#com.codepath.apps.restclienttemplate.ComposeActivity
-ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:17:9-62
-	android:name
-		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:17:19-50
-activity#com.codepath.apps.restclienttemplate.TimelineActivity
-ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:18:9-54
-	android:name
-		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:18:19-51
-activity#com.codepath.apps.restclienttemplate.LoginActivity
-ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:19:9-38:20
-	android:label
-		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:21:13-45
+ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:19:9-21:59
 	android:theme
-		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:22:13-44
+		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:21:13-56
 	android:name
-		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:20:13-42
+		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:20:13-44
+activity#com.codepath.apps.restclienttemplate.TimelineActivity
+ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:22:9-54
+	android:name
+		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:22:19-51
+activity#com.codepath.apps.restclienttemplate.LoginActivity
+ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:23:9-42:20
+	android:label
+		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:25:13-45
+	android:theme
+		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:26:13-44
+	android:name
+		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:24:13-42
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:23:13-27:29
+ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:27:13-31:29
 action#android.intent.action.MAIN
-ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:24:17-69
+ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:24:25-66
+		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:26:17-77
+ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:30:17-77
 	android:name
-		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:26:27-74
+		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:30:27-74
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:@string/intent_host+data:scheme:@string/intent_scheme
-ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:28:13-37:29
+ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:32:13-41:29
 action#android.intent.action.VIEW
-ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:29:17-69
+ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:33:17-69
 	android:name
-		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:29:25-66
+		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:33:25-66
 category#android.intent.category.DEFAULT
-ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:31:17-76
+ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:35:17-76
 	android:name
-		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:31:27-73
+		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:35:27-73
 category#android.intent.category.BROWSABLE
-ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:32:17-78
+ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:36:17-78
 	android:name
-		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:32:27-75
+		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:36:27-75
 data
-ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:34:17-36:62
+ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:38:17-40:62
 	android:host
-		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:35:21-55
+		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:39:21-55
 	android:scheme
-		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:36:21-59
+		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:40:21-59
 uses-sdk
 INJECTED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml

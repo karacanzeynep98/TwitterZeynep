@@ -1,11 +1,14 @@
 package com.codepath.apps.restclienttemplate;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.Image;
 import android.net.ParseException;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,6 +17,9 @@ import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
@@ -28,19 +34,23 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 
-
 import cz.msebera.android.httpclient.Header;
 
 public class TimelineActivity extends AppCompatActivity {
 
     public static final int COMPOSE_REQUEST_CODE = 100;
+    public static final int REPLY_REQUEST_CODE = 800;
 
-    private TwitterClient client;
+    TwitterClient client;
     TweetAdapter tweetAdapter;
     ArrayList<Tweet> tweets;
     RecyclerView rvTweets;
     Tweet resultTweet;
+
     private SwipeRefreshLayout swipeContainer;
+
+    // Instance of the progress action-view
+    MenuItem miActionProgressItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +70,7 @@ public class TimelineActivity extends AppCompatActivity {
         //RecyclerView setup
         rvTweets.setLayoutManager(new LinearLayoutManager(this));
         rvTweets.setAdapter(tweetAdapter);
+
         populateTimeline();
 
         // Setup refresh listener which triggers new data loading
@@ -84,6 +95,8 @@ public class TimelineActivity extends AppCompatActivity {
         getSupportActionBar().setLogo(getDrawable(R.drawable.ic_launcher_twitter_round));
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
+
+
     }
 
     private void populateTimeline(){
@@ -92,6 +105,7 @@ public class TimelineActivity extends AppCompatActivity {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+
                 for (int i = 0; i < response.length(); i++){
                     //convert each object to a tweet model
                     //add that tweet model to our data source
@@ -173,6 +187,15 @@ public class TimelineActivity extends AppCompatActivity {
 
         }
         super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == REPLY_REQUEST_CODE && resultCode == RESULT_OK) {
+
+            resultTweet = (Tweet) Parcels.unwrap(data.getParcelableExtra(ComposeActivity.RESULT_TWEET_KEY));
+
+            tweets.add(0, resultTweet);
+            tweetAdapter.notifyItemInserted(0);
+            rvTweets.scrollToPosition(0);
+        }
     }
 
     public void fetchTimelineAsync(int page) {
@@ -181,4 +204,25 @@ public class TimelineActivity extends AppCompatActivity {
         // Now we call setRefreshing(false) to signal refresh has finished
         swipeContainer.setRefreshing(false);
     }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        // Store instance of the menu item containing progress
+        miActionProgressItem = menu.findItem(R.id.miActionProgress);
+        // Extract the action-view from the menu item
+        ProgressBar v =  (ProgressBar) MenuItemCompat.getActionView(miActionProgressItem);
+        // Return to finish
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    public void showProgressBar() {
+        // Show progress item
+        miActionProgressItem.setVisible(true);
+    }
+
+    public void hideProgressBar() {
+        // Hide progress item
+        miActionProgressItem.setVisible(false);
+    }
+
 }

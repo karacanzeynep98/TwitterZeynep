@@ -68,4 +68,5 @@ public class TwitterClient extends OAuthBaseClient {
 		params.put("status", message);
 		client.post(apiUrl, params, handler);
 	}
+
 }
