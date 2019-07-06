@@ -671,9 +671,11 @@ drawable ic_addtweet
 drawable ic_launcher
 drawable ic_launcher_twitter_round
 drawable ic_vector_close
+drawable ic_vector_heart
 drawable ic_vector_heart_stroke
 drawable ic_vector_reply2
 drawable ic_vector_retweet_stroke
+drawable image1
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low

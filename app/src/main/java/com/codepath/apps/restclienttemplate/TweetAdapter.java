@@ -46,7 +46,7 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
     private List<Tweet> mTweets;
     Context context;
 
-    public static int REPLY_REQUEST_CODE = 200;
+    public static int REPLY_REQUEST_CODE = 300;
 
     //pass in the tweets array in the constructor
     public TweetAdapter(List<Tweet> Tweets) {
@@ -108,7 +108,6 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
         public TextView tvBody;
         public TextView timeStamp;
         public ImageView ivReplyImage;
-        public ImageView ivRetweetButton;
         public ImageView ivLikeButton;
         public ImageView ivTweetImage;
 
@@ -123,12 +122,10 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
             timeStamp = (TextView) itemView.findViewById(R.id.tvTimeStamp);
             tvUserScreenName = (TextView) itemView.findViewById(R.id.tvUserId);
             ivReplyImage = (ImageView) itemView.findViewById(R.id.ivReplyButton);
-            ivRetweetButton = (ImageView) itemView.findViewById(R.id.ivRetweetButton);
             ivLikeButton = (ImageView) itemView.findViewById(R.id.ivLikeButton);
             ivTweetImage = (ImageView) itemView.findViewById(R.id.ivTweetImage);
 
             ivReplyImage.setOnClickListener(this);
-            ivRetweetButton.setOnClickListener(this);
             ivLikeButton.setOnClickListener(this);
 
         }
@@ -155,36 +152,23 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
 
                     return;
 
-
-                case R.id.ivRetweetButton:
-
-                    position = getAdapterPosition();
-                    // make sure the position is valid, i.e. actually exists in the view
-                    if (position != RecyclerView.NO_POSITION) {
-                        ; //DO STUFF
-
-
-                    }
-
-                    return;
-
                 case R.id.ivLikeButton:
 
-                    int position2 = getAdapterPosition();
+                    position = getAdapterPosition();
 
-                    Tweet tweet = mTweets.get(position2);
+                    final Tweet tweet = mTweets.get(position);
 
                     // make sure the position is valid, i.e. actually exists in the view
-                    if (position2 != RecyclerView.NO_POSITION) {
+                    if (position != RecyclerView.NO_POSITION) {
 
-                        if(mTweets.get(position2).likedByUser) {
+                        if(tweet.likedByUser) {
 
-                            TwitterApp.getRestClient().favoriteTweet(tweet.uid, new JsonHttpResponseHandler() {
+                            TwitterApp.getRestClient().unfavoriteTweet(tweet.uid, new JsonHttpResponseHandler() {
 
                                 @Override
                                 public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                                    DrawableCompat.setTint(ivLikeButton.getDrawable(), ContextCompat.getColor(context, R.color.medium_red));
-
+                                        ivLikeButton.setImageResource(R.drawable.ic_vector_heart_stroke);
+                                        tweet.likedByUser = false;
                                 }
 
                                 @Override
@@ -213,11 +197,12 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
 
                         } else {
 
-                            TwitterApp.getRestClient().unfavoriteTweet(tweet.uid, new JsonHttpResponseHandler() {
+                            TwitterApp.getRestClient().favoriteTweet(tweet.uid, new JsonHttpResponseHandler() {
 
                                 @Override
                                 public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                                    DrawableCompat.setTint(ivLikeButton.getDrawable(), ContextCompat.getColor(context, R.color.twitter_blue));
+                                    ivLikeButton.setImageResource(R.drawable.ic_vector_heart);
+                                    tweet.likedByUser = true;
 
                                 }
 

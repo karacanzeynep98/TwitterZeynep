@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
@@ -39,6 +40,9 @@ public class ComposeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compose);
+
+        ImageView ivProfileImage = (ImageView) findViewById(R.id.ivProfileImageCompose);
+        ivProfileImage.setImageResource(R.drawable.image1);
 
         etTweetInput = (EditText) findViewById(R.id.etNewTweet);
         myButton = (Button) findViewById(R.id.myTweetButton);

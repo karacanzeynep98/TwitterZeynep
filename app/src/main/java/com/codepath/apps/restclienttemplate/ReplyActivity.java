@@ -42,6 +42,9 @@ public class ReplyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compose);
 
+        ImageView ivProfileImage = (ImageView) findViewById(R.id.ivProfileImageCompose);
+        ivProfileImage.setImageResource(R.drawable.image1);
+
         etTweetInput = (EditText) findViewById(R.id.etNewTweet);
         myButton = (Button) findViewById(R.id.myTweetButton);
         tvCount = (TextView) findViewById(R.id.tvCount);

@@ -468,6 +468,10 @@
         "source": "/Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/res/drawable-mdpi/ic_launcher.png"
     },
     {
+        "merged": "/Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_vector_heart.png.flat",
+        "source": "/Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/res/drawable-mdpi/ic_vector_heart.png"
+    },
+    {
         "merged": "/Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "/Users/zkaracan98/.gradle/caches/transforms-2/files-2.1/d9d39a077e935cf697cd6e56b3d04951/res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
     },
@@ -550,6 +554,10 @@
     {
         "merged": "/Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "/Users/zkaracan98/.gradle/caches/transforms-2/files-2.1/d9d39a077e935cf697cd6e56b3d04951/res/drawable-xxxhdpi-v4/abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "/Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/build/intermediates/res/merged/debug/drawable-mdpi_image1.jpeg.flat",
+        "source": "/Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/res/drawable-mdpi/image1.jpeg"
     },
     {
         "merged": "/Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
