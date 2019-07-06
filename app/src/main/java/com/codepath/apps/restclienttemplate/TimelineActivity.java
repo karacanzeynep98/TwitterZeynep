@@ -114,6 +114,8 @@ public class TimelineActivity extends AppCompatActivity {
     }
 
     private void populateTimeline(long maxId){
+
+        showProgressBar();
         //make the network request to get back data from twitter api
         client.getHomeTimeline(maxId, new JsonHttpResponseHandler() {
 
@@ -132,6 +134,8 @@ public class TimelineActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
+
+                hideProgressBar();
             }
 
             @Override
@@ -231,7 +235,9 @@ public class TimelineActivity extends AppCompatActivity {
 
     public void showProgressBar() {
         // Show progress item
-        miActionProgressItem.setVisible(true);
+        if(miActionProgressItem != null) {
+            miActionProgressItem.setVisible(true);
+        }
     }
 
     public void hideProgressBar() {

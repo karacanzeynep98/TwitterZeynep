@@ -1,4 +1,4 @@
-#Fri Jul 05 18:19:24 PDT 2019
+#Fri Jul 05 18:30:15 PDT 2019
 base.0=/Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/build/intermediates/dex/debug/mergeExtDexDebug/out
 path.1=classes.dex
 renamed.1=classes2.dex

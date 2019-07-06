@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Jul 05 18:19:24 PDT 2019
+#Fri Jul 05 18:30:15 PDT 2019
 1.base=/Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/build/intermediates/dex/debug/mergeProjectDexDebug/out
 0.baseType=DIRECTORY
 1.baseType=DIRECTORY
