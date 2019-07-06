@@ -61,49 +61,48 @@
         android:id="@+id/ivLikeButton"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
         android:contentDescription="@string/todo"
+        android:focusable="true"
         android:tint="@color/twitter_blue"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ivTweetImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/ivRetweetButton"
         app:layout_constraintTop_toBottomOf="@+id/tvBody"
-        app:layout_constraintVertical_bias="0.511"
         app:srcCompat="@drawable/ic_vector_heart_stroke" />
 
     <ImageView
         android:id="@+id/ivRetweetButton"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="31dp"
+        android:layout_height="22dp"
         android:layout_gravity="center"
-        android:layout_marginTop="8dp"
         android:contentDescription="@string/todo"
         android:tint="@color/twitter_blue"
-        app:layout_constraintBottom_toBottomOf="@+id/ivLikeButton"
+        app:layout_constraintBottom_toTopOf="@+id/ivTweetImage"
         app:layout_constraintEnd_toStartOf="@+id/ivLikeButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/ivReplyButton"
-        app:layout_constraintTop_toTopOf="@+id/ivLikeButton"
+        app:layout_constraintTop_toBottomOf="@+id/tvBody"
         app:srcCompat="@drawable/ic_vector_retweet_stroke" />
 
     <ImageView
         android:id="@+id/ivReplyButton"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:clickable="true"
-        android:contentDescription="@string/todo"
+        android:contentDescription="@string/myreply"
+        android:focusable="true"
         android:tint="@color/twitter_blue"
-        app:layout_constraintBottom_toBottomOf="@+id/ivRetweetButton"
+        app:layout_constraintBottom_toTopOf="@+id/ivTweetImage"
         app:layout_constraintEnd_toStartOf="@+id/ivRetweetButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivRetweetButton"
-        app:layout_constraintVertical_bias="0.511"
-        app:srcCompat="@drawable/ic_vector_reply2"
-        android:focusable="true" />
+        app:layout_constraintTop_toBottomOf="@+id/tvBody"
+        app:srcCompat="@drawable/ic_vector_reply2" />
 
     <View
         android:id="@+id/HorizontalDivider"
@@ -113,8 +112,10 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivRetweetButton" />
+        app:layout_constraintTop_toBottomOf="@+id/ivRetweetButton"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tvUserId"
@@ -126,6 +127,19 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvUserName"
         app:layout_constraintTop_toTopOf="@+id/tvTimeStamp" />
+
+    <ImageView
+        android:id="@+id/ivTweetImage"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toTopOf="@+id/HorizontalDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivRetweetButton"
+        app:srcCompat="@color/black" />
 
 
 </android.support.constraint.ConstraintLayout>

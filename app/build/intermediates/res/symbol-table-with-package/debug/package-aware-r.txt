@@ -775,6 +775,7 @@ id ivProfileImage
 id ivProfileImageCompose
 id ivReplyButton
 id ivRetweetButton
+id ivTweetImage
 id left
 id line1
 id line3
@@ -901,6 +902,7 @@ layout activity_compose
 layout activity_login
 layout activity_reply
 layout activity_timeline
+layout activity_tweet_details
 layout itemtweet
 layout notification_action
 layout notification_action_tombstone
@@ -971,6 +973,7 @@ string intent_host
 string intent_scheme
 string loading
 string login_label
+string myreply
 string search_menu_title
 string status_bar_notification_info_overflow
 string textview

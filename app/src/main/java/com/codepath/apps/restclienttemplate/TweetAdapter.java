@@ -4,16 +4,21 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Movie;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 
 import android.net.ParseException;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
+import android.support.v7.content.res.AppCompatResources;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 
 
 import android.text.Layout;
 import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,12 +29,17 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.codepath.apps.restclienttemplate.R;
 import com.codepath.apps.restclienttemplate.models.Tweet;
+import com.loopj.android.http.JsonHttpResponseHandler;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.parceler.Parcels;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
+
+import cz.msebera.android.httpclient.Header;
 
 public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> {
 
@@ -74,6 +84,14 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
         viewHolder.timeStamp.setText(relativeTime);
 
         Glide.with(context).load(tweet.user.profileImageUrl).into(viewHolder.ivProfileImage);
+
+        if (tweet.hasEntities == true) {
+            String entityUrl = tweet.entity.loadURL;
+            viewHolder.ivTweetImage.setVisibility(View.VISIBLE);
+            Glide.with(context).load(entityUrl).into(viewHolder.ivTweetImage);
+        } else {
+            viewHolder.ivTweetImage.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -90,6 +108,9 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
         public TextView tvBody;
         public TextView timeStamp;
         public ImageView ivReplyImage;
+        public ImageView ivRetweetButton;
+        public ImageView ivLikeButton;
+        public ImageView ivTweetImage;
 
         //constructor of the viewHolder will take in an inflated layout
         public ViewHolder(View itemView) {
@@ -102,26 +123,136 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
             timeStamp = (TextView) itemView.findViewById(R.id.tvTimeStamp);
             tvUserScreenName = (TextView) itemView.findViewById(R.id.tvUserId);
             ivReplyImage = (ImageView) itemView.findViewById(R.id.ivReplyButton);
+            ivRetweetButton = (ImageView) itemView.findViewById(R.id.ivRetweetButton);
+            ivLikeButton = (ImageView) itemView.findViewById(R.id.ivLikeButton);
+            ivTweetImage = (ImageView) itemView.findViewById(R.id.ivTweetImage);
 
             ivReplyImage.setOnClickListener(this);
+            ivRetweetButton.setOnClickListener(this);
+            ivLikeButton.setOnClickListener(this);
+
         }
 
         @Override
         public void onClick(View v) {
 
-            // gets item position
-            int position = getAdapterPosition();
-            // make sure the position is valid, i.e. actually exists in the view
-            if (position != RecyclerView.NO_POSITION) {
-                // get the movie at the position, this won't work if the class is static
-                Tweet tweet = mTweets.get(position);
+            switch(v.getId()) {
 
-                Intent replyTweet = new Intent(context, ReplyActivity.class);
-                replyTweet.putExtra("username", "@" + tweet.user.screenName);
-                ((Activity) context).startActivityForResult(replyTweet, REPLY_REQUEST_CODE);
+
+                case R.id.ivReplyButton:
+                    // gets item position
+                    int position = getAdapterPosition();
+                    // make sure the position is valid, i.e. actually exists in the view
+                    if (position != RecyclerView.NO_POSITION) {
+                        // get the movie at the position, this won't work if the class is static
+
+                        Tweet tweet = mTweets.get(position);
+
+                        Intent replyTweet = new Intent(context, ReplyActivity.class);
+                        replyTweet.putExtra("username", "@" + tweet.user.screenName);
+                        ((Activity) context).startActivityForResult(replyTweet, REPLY_REQUEST_CODE);
+                    }
+
+                    return;
+
+
+                case R.id.ivRetweetButton:
+
+                    position = getAdapterPosition();
+                    // make sure the position is valid, i.e. actually exists in the view
+                    if (position != RecyclerView.NO_POSITION) {
+                        ; //DO STUFF
+
+
+                    }
+
+                    return;
+
+                case R.id.ivLikeButton:
+
+                    int position2 = getAdapterPosition();
+
+                    Tweet tweet = mTweets.get(position2);
+
+                    // make sure the position is valid, i.e. actually exists in the view
+                    if (position2 != RecyclerView.NO_POSITION) {
+
+                        if(mTweets.get(position2).likedByUser) {
+
+                            TwitterApp.getRestClient().favoriteTweet(tweet.uid, new JsonHttpResponseHandler() {
+
+                                @Override
+                                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                                    DrawableCompat.setTint(ivLikeButton.getDrawable(), ContextCompat.getColor(context, R.color.medium_red));
+
+                                }
+
+                                @Override
+                                public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                                    Log.d("TwitterClient", response.toString());
+                                }
+
+                                @Override
+                                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                                    Log.d("TwitterClient", errorResponse.toString());
+                                    throwable.printStackTrace();
+                                }
+
+                                @Override
+                                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+                                    Log.d("TwitterClient", errorResponse.toString());
+                                    throwable.printStackTrace();
+                                }
+
+                                @Override
+                                public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                                    Log.d("TwitterClient", responseString);
+                                    throwable.printStackTrace();
+                                }
+                            });
+
+                        } else {
+
+                            TwitterApp.getRestClient().unfavoriteTweet(tweet.uid, new JsonHttpResponseHandler() {
+
+                                @Override
+                                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                                    DrawableCompat.setTint(ivLikeButton.getDrawable(), ContextCompat.getColor(context, R.color.twitter_blue));
+
+                                }
+
+                                @Override
+                                public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                                    Log.d("TwitterClient", response.toString());
+
+                                }
+
+                                @Override
+                                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                                    Log.d("TwitterClient", errorResponse.toString());
+                                    throwable.printStackTrace();
+
+                                }
+
+                                @Override
+                                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+                                    Log.d("TwitterClient", errorResponse.toString());
+                                    throwable.printStackTrace();
+                                }
+
+                                @Override
+                                public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                                    Log.d("TwitterClient", responseString);
+                                    throwable.printStackTrace();
+
+                                }
+                            });
+                        }
+                    }
+
+                    return;
             }
         }
-
     }
 
     // getRelativeTimeAgo("Mon Apr 01 21:16:23 +0000 2014");

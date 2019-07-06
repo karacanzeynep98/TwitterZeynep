@@ -1512,6 +1512,10 @@
         "source": "/Users/zkaracan98/.gradle/caches/transforms-2/files-2.1/d9d39a077e935cf697cd6e56b3d04951/res/color-v21/abc_btn_colored_borderless_text_material.xml"
     },
     {
+        "merged": "/Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/build/intermediates/res/merged/debug/layout_activity_tweet_details.xml.flat",
+        "source": "/Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/res/layout/activity_tweet_details.xml"
+    },
+    {
         "merged": "/Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "/Users/zkaracan98/.gradle/caches/transforms-2/files-2.1/d9d39a077e935cf697cd6e56b3d04951/res/drawable-hdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
     },

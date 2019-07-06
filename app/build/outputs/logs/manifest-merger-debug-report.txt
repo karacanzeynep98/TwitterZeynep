@@ -89,7 +89,7 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/zkaracan98/.
 	android:name
 		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:11:9-35
 activity#com.codepath.apps.restclienttemplate.TweetDetails
-ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:17:9-59
+ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:17:9-50
 	android:name
 		ADDED from /Users/zkaracan98/AndroidStudioProjects/TwitterZeynep/app/src/main/AndroidManifest.xml:17:19-47
 activity#com.codepath.apps.restclienttemplate.ReplyActivity
